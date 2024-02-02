@@ -310,4 +310,7 @@ header a{
     .carousel .list .item .content .title{
         font-size: 30px;
     }
+    .carousel .list .item .content .topic{
+        font-size: 40px;
+    }
 }

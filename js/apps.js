@@ -7,6 +7,9 @@ let thumbnailDom = document.querySelector('.carousel .thumbnail');
 nextDom.onclick = function(){
     showSlider('next');
 }
+prevDom.onclick = function(){
+    showSlider('prev');
+}
 let timeRunning = 3000;
 let timeAutoNext = 20000;
 let runTimeOut;
@@ -26,12 +29,13 @@ function showSlider (type){
         let positionLastItem = itemSlider.length - 1;
         listItemDom.prepend(itemSlider[positionLastItem]);
         thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-        carouselDom.classList.add('perv');
+        carouselDom.classList.add('prev');
     }
 
     clearTimeout(runTimeOut);
     runTimeOut = setTimeout (() =>{
         carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
     }, timeRunning)
 
     clearTimeout(runAutoRun);
